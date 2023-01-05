@@ -14,8 +14,6 @@ const playlist = document.querySelector('.playlist');
 const visualizerContainer = document.querySelector(".visualizer-container");
 const audio = document.createElement('audio');
 
-// create an audio context
-const ctx = new AudioContext();
 
 let allSongs = [];
 let box = [];
@@ -27,6 +25,9 @@ let songIndex = 0;
 let repeat = false;
 
 function init() {
+
+    // create an audio context
+    const ctx = new AudioContext();
     // create an audio source
     audioSource = ctx.createMediaElementSource(audio);
     // create an audio analyzer
