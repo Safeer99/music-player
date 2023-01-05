@@ -120,7 +120,7 @@ function nextTrack() {
 
 function prevTrack() {
     if (songIndex - 1 >= 0) {
-        songIndex += 1;
+        songIndex -= 1;
         playSong();
     } else {
         playSong()
@@ -142,12 +142,14 @@ function repeatTrack() {
 }
 
 playPauseBtn.addEventListener('click', () => {
-    if (playPauseBtn.classList.contains('fa-circle-pause')) {
+    if (playPauseBtn.classList.contains('fa-circle-pause') && allSongs.length > 0) {
         audio.pause();
         playPauseBtn.classList.remove('fa-circle-pause');
         playPauseBtn.classList.add('fa-circle-play');
-    } else {
-        playSong();
+    } else if (allSongs.length > 0) {
+        playPauseBtn.classList.remove('fa-circle-play');
+        playPauseBtn.classList.add('fa-circle-pause');
+        audio.play();
     }
 })
 
