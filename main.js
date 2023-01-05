@@ -14,10 +14,10 @@ const playlist = document.querySelector('.playlist');
 const visualizerContainer = document.querySelector(".visualizer-container");
 const audio = document.createElement('audio');
 
-
 let allSongs = [];
 let box = [];
 let frequencyData = [];
+let ctx;
 let audioSource = undefined;
 let analyzer = undefined;
 const totalFrequency = 800
@@ -25,9 +25,8 @@ let songIndex = 0;
 let repeat = false;
 
 function init() {
-
     // create an audio context
-    const ctx = new AudioContext();
+    ctx = new AudioContext();
     // create an audio source
     audioSource = ctx.createMediaElementSource(audio);
     // create an audio analyzer
@@ -167,8 +166,6 @@ audio.addEventListener('ended', () => {
     }
 })
 
-init();
-
 // displaying all songs in side bar
 function displaySongs() {
     playlist.innerHTML = '';
@@ -222,3 +219,8 @@ function openCloseSidebar() {
         sidebar.classList.add('open');
     }
 }
+
+document.querySelector('.start-btn').addEventListener('click', () => {
+    document.querySelector('.overlay').style.display = "none";
+    init();
+})    
