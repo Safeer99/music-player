@@ -11,14 +11,14 @@ body {
 
 .background {
     position: absolute;
-    top: -50px;
-    left: -50px;
-    right: -50px;
-    bottom: -50px;
-    background-image: url(./bg.jpg);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./bgblur.jpg);
     background-position: center center;
     background-size: cover;
-    filter: blur(3px);
+    overflow: hidden;
 }
 
 .track-title {
@@ -29,6 +29,12 @@ body {
     color: white;
     font-size: 50px;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .track-title {
+        top: 150px;
+    }
 }
 
 .visualizer-container {
