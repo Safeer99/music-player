@@ -90,6 +90,7 @@ function updateTrackTime() {
 
 function playSong() {
     if (allSongs.length > 0) {
+        console.log(allSongs);
         audio.setAttribute("src", allSongs[songIndex].data);
         audio.currentTime = 0;
         audio.play();
@@ -188,8 +189,7 @@ function displaySongs() {
         box.push(element);
     })
     box.forEach(element => {
-        console.log(element);
-        element.addEventListener('click', (e) => {
+        element.addEventListener('click', () => {
             songIndex = element.id.slice(-1);
             playSong();
         })
