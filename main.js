@@ -90,7 +90,6 @@ function updateTrackTime() {
 
 function playSong() {
     if (allSongs.length > 0) {
-        console.log(allSongs);
         audio.setAttribute("src", allSongs[songIndex].data);
         audio.currentTime = 0;
         audio.play();
