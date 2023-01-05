@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Equalizer</title>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="audio-controls">
+        <div class="track">
+            <div class="cur-time">00:00</div>
+            <input class="track-time" type="range" name="track-time" id="track" min="0" max="100" value="0"
+                onchange="seekTo()">
+            <div class="track-length">00:00</div>
+        </div>
+        <div class="volume-controls">
+            <div><i class="fa-solid fa-volume-low"></i></div>
+            <input onchange="updateVolume()" class="cur-volume" type="range" name="volume" id="volume" min="0" max="100"
+                value="100">
+            <div><i class="fa-solid fa-volume-high"></i></div>
+        </div>
+        <div class="play-pause-controls">
+            <div class="shuffle" onclick="shuffleTrack()"><i class="fa-solid fa-shuffle"></i></div>
+            <div class="prev-track" onclick="prevTrack()"><i class="fa-solid fa-backward"></i></div>
+            <div class="play-pause-btn"><i class="fa-solid fa-circle-play play-pause"></i></div>
+            <div class="next-track" onclick="nextTrack()"><i class="fa-solid fa-forward"></i></div>
+            <div onclick="repeatTrack()"><i class="fa-solid fa-repeat repeat-btn"></i></div>
+        </div>
+    </div>
+    <div class="track-title">MUSIC</div>
+    <div class="visualizer-container">
+        <!-- <div class="visualizer-container-bar"></div> -->
+    </div>
+
+    <div class="sidebar-open" onclick="openCloseSidebar()"><i class="fa-solid fa-bars"></i></div>
+
+    <section class="sidebar">
+        <div class="sidebar-close" onclick="openCloseSidebar()"><i class="fa-solid fa-xmark"></i></div>
+        <form>
+            <label for="musicFile" class="uploadLabel">Select and Upload a music file</label>
+            <input class="audio-file" type="file" accept="audio/*" name="music" id="music">
+            <button class="upload">Upload</button>
+        </form>
+        <h3>Songs</h3>
+        <div class="playlist">
+            <!-- <div class="box" id="song1">
+                <span>
+                    song name
+                </span>
+                <i class="fa-solid fa-circle-play"></i>
+            </div> -->
+        </div>
+    </section>
+
+</body>
+<script src="main.js"></script>
+
+</html>

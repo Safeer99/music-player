@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.background {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background-image: url(./bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px);
+}
+
+.track-title {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.visualizer-container {
+    position: absolute;
+    bottom: 220px;
+    right: 0;
+    left: 0;
+    height: 250px;
+    min-width: 200px;
+    max-width: 1200px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+}
+
+.visualizer-container-bar {
+    display: inline-block;
+    background-image: linear-gradient(to bottom, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+    margin: 0 2px;
+    height: 4px;
+    width: calc(2% - 4px);
+    transition: all;
+}
+
+.audio-controls {
+    position: absolute;
+    width: 80%;
+    height: 150px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.track,
+.volume-controls,
+.play-pause-controls {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.track>div,
+.volume-controls>div {
+    padding: 0 10px;
+    color: white;
+}
+
+.track-time {
+    width: 70%;
+    cursor: pointer;
+}
+
+.volume-controls {
+    top: 40%;
+}
+
+.play-pause-controls {
+    top: 70%;
+    color: white;
+    font-size: 22px;
+    align-items: center;
+}
+
+.play-pause-controls>div {
+    margin: 0 10px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.play-pause-btn {
+    font-size: 35px;
+}
+
+.active {
+    color: #2CD8D5;
+}
+
+/* sidebar */
+
+.sidebar-open,
+.sidebar-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar-close {
+    left: 80%;
+}
+
+.sidebar {
+    position: absolute;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    transition: all 0.5s;
+    transform: translateX(-250px);
+}
+
+.open {
+    transform: translateX(0px);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px 20px 0px;
+    padding: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.uploadLabel {
+    margin: 10px 0px;
+    color: white;
+}
+
+.audio-file {
+    width: 40%;
+    margin: 20px 0px;
+}
+
+button {
+    width: 35%;
+    height: 30px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(-225deg, #2CD8D5 0%, #6B8DD6 48%, #8E37D7 100%);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover,
+.box:hover {
+    transform: scale(1.05);
+}
+
+.playlist {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.box {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.box>span {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box>i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
